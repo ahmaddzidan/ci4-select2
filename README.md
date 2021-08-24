@@ -95,7 +95,7 @@ Select2 Library for Codeigniter 4 has been tested and working on the latest vers
 
 ## Requirements
 Codeigniter > 4.0  
-Select2 > 4.0.13 
+Select2 > 4.0.13  
 PHP > 7.1.3
 
 ## License
