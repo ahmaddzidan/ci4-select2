@@ -1,0 +1,45 @@
+{
+    "name": "asanusi007/ci4-select2",
+    "description": "Integrate select2 with CodeIgniter 4 using composer",
+    "license": "MIT",
+    "config": {
+      "bin-dir": "vendor/bin",
+      "allow-plugins": {
+        "phpstan/extension-installer": true
+      }
+    },
+    "keywords": [
+          "codeigniter",
+          "codeigniter4",
+          "select2"
+      ],
+    "authors": [
+      {
+        "name": "Ahmad Sanusi",
+        "email": "asanusi007@gmail.com"
+      }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Asanusi007\\Select2\\": "src/"
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Asanusi007\\Select2\\Test\\": "src/tests/unit"
+      }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+      "test": "vendor/bin/phpunit",
+      "cs-fix": "php-cs-fixer fix --ansi --verbose --diff"
+    },
+    "require": {
+      "php": ">=8.0",
+      "codeigniter4/framework": "^4.5"
+    },
+    "require-dev": {
+      "codeigniter4/devkit": "^1.0"
+    }
+  }
