@@ -234,6 +234,11 @@ class Select2
     public function default($id)
     {
         $item = $this->builder->where([$this->primaryKey => $id])->get()->getRowArray();
+        $response = array('' => '');
+
+        if (! $item) {
+            return $response;
+        }
 
         if (is_array($this->searchableFields)) {
             $temp = [];
@@ -250,8 +255,6 @@ class Select2
 
         if (!empty($item)) {
             $response = array($item[$this->primaryKey] => $text);
-        } else {
-            $response = array('' => '');
         }
 
         return $response;
