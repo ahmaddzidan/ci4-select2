@@ -54,6 +54,13 @@ class Select2
     protected $textProperty;
 
     /**
+     * Soft Delete
+     *
+     * @var bool
+     */
+    protected $useSoftDeletes  = false;
+
+    /**
      * Page Limit
      *
      * @var int
@@ -143,6 +150,10 @@ class Select2
         $term = request()->getGet('term');
         $page = request()->getGet('page') ?? 1;
         $offset = ($page - 1) * $this->pageLimit;
+
+        if ( $this->useSoftDeletes ) {
+            $this->builder->where('deleted_at', null);
+        }
 
         if (request()->getGet('filter')) {
             $filters = json_decode(request()->getGet('filter'), true);
